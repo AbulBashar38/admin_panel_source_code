@@ -298,6 +298,20 @@ const Routes = [
     pageTitle:"Notification",
     component: ManageNotification,
   },
+  {
+    path:'/forum-home',
+    name: "Forum",
+    exact: true, 
+    pageTitle:"Forum",
+    component: ForumHome,
+  },
+  {
+    path:'/user-sugested-dates',
+    name: "UserSuggested",
+    exact: true, 
+    pageTitle:"UserSuggested",
+    component: UserSuggestedDate,
+  },
 
 ];
 

@@ -133,34 +133,44 @@ const metisMenuCompany = [
         label: "Forum List",
         to: "/Forum-list",
       },
-    ],
-  },
-  {
-    id: 8,
-    icon: "icon-home",
-    label: "Booking Locations",
-    to: "#",
-    content: [
       {
-        id: 9,
-        label: "Manage Locations",
-        to: "/location",
+        id:15,
+        label: "Manage Forum",
+        to: "/forum-home",
       },
     ],
   },
   {
     id: 10,
     icon: "icon-home",
-    label: "Admin-Settings",
+    label: "Booking Locations",
     to: "#",
     content: [
       {
         id: 11,
+        label: "Manage Locations",
+        to: "/location",
+      },
+      {
+        id: 16,
+        label: "Add Locations",
+        to: "/add-location",
+      },
+    ],
+  },
+  {
+    id: 12,
+    icon: "icon-home",
+    label: "Admin-Settings",
+    to: "#",
+    content: [
+      {
+        id: 13,
         label: "Privacy Policy",
         to: "/pp?content_type=pp",
       },
       {
-        id: 12,
+        id: 14,
         label: "Terms & Condition",
         to: "/tc?content_type=tc",
       },

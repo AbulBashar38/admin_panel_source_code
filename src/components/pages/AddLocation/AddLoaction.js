@@ -47,7 +47,7 @@ const AddLoaction = () => {
     return (
         <>
             <CssBaseline />
-            <AppBar position="static">
+            {/* <AppBar position="static">
                 <Toolbar>
                     <Menu />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -55,11 +55,11 @@ const AddLoaction = () => {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
             <main style={{ alignItems: "center" }}>
                 <div >
                     <Container maxWidth="md"  >
-                        <Typography variant="h2" align="center" color="text.primary" gutterBottom>
+                        <Typography variant="h4" align="center" color="text.primary" gutterBottom>
                             Add Location
                         </Typography>
                         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', padding: '20px' }}>

@@ -6,6 +6,7 @@ import { Button, Typography, CssBaseline, AppBar, Toolbar, ButtonGroup, Grid, ma
 import { Menu } from '@mui/icons-material'
 import useStyles from './styles'
 import LocationCard from '../../Components/Locationcard/LocationCard'
+import { Link } from 'react-router-dom'
 const card = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const ManageLocation = () => {
@@ -13,7 +14,7 @@ const ManageLocation = () => {
     return (
         <>
             <CssBaseline />
-            <AppBar position="static">
+            {/* <AppBar position="static">
                 <Toolbar>
                     <Menu />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -21,12 +22,12 @@ const ManageLocation = () => {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
 
             <main>
                 <div className={classes.container}>
                     <Container>
-                        <Typography variant="h2" align="center" color="text.primary" gutterBottom>
+                        <Typography variant="h4" align="left" color="text.primary" gutterBottom>
                             Manage Location
                         </Typography>
 
@@ -41,9 +42,12 @@ const ManageLocation = () => {
                                 />
                             </Grid>
                             <Grid item xs={3} sm={3} md={3} align="right">
-                                <Button variant="contained" className={classes.AddButton} onClick={() => window.location = '/location/add'} >
+                               <Link to={'/add-location'}>
+                               <Button variant="contained" className={classes.AddButton}  >
                                     + Add New Location
                                 </Button>
+                               </Link>
+                                
                             </Grid>
                         </Grid>
 

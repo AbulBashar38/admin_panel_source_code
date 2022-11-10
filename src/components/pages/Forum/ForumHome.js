@@ -37,18 +37,18 @@ const ForumHome = () => {
     return (
         <>
             <CssBaseline />
-            <AppBar position="static">
+            {/* <AppBar position="static">
                 <Toolbar>
                     <Menu />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Manage Location
+                        Forum List
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
             <main>
                 <div className={classes.container}>
-                    <Container>
+                    {/* <Container> */}
                     <Grid container sx={{ 
                         display: 'flex', 
                         justifyContent: 'space-between', 
@@ -57,7 +57,7 @@ const ForumHome = () => {
                         }}
                         >
                             <Typography variant='h5' align='left' >
-                                Manage Notification
+                            Forum List
                             </Typography>
                            
                            
@@ -100,7 +100,7 @@ const ForumHome = () => {
                         <Grid>
                             <ForumTable />
                         </Grid>
-                    </Container>
+                    {/* </Container> */}
                 </div>
             </main>
         </>

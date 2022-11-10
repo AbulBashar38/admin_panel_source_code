@@ -44,7 +44,7 @@ const Routing = () => {
 			<Route exact path="/">
 				<Dashboard />
 			</Route>
-			<Route component={Layout}></Route>
+			<Route component={Layout}></Route>	
 			</>:<>
 			<Route path="/login">        
 				<Login />           
