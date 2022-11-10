@@ -142,7 +142,7 @@ const metisMenuCompany = [
   },
   {
     id: 10,
-    icon: "icon-home",
+    icon: "icon-pin",
     label: "Booking Locations",
     to: "#",
     content: [
@@ -159,8 +159,39 @@ const metisMenuCompany = [
     ],
   },
   {
-    id: 12,
+    id: 17,
     icon: "icon-home",
+    label: "Suggested Dates",
+    to: "#",
+    content: [
+      {
+        id: 18,
+        label: "User Suggested dates",
+        to: "/user-sugested-dates",
+      },
+    ],
+  },
+  {
+    id: 20,
+    icon: "icon-bell",
+    label: "Notifications",
+    to: "#",
+    content: [
+      {
+        id: 21,
+        label: "Manage Notifications",
+        to: "/notification",
+      },
+      {
+        id: 22,
+        label: "Add Notification",
+        to: "/add-notification",
+      },
+    ],
+  },
+  {
+    id: 12,
+    icon: "icon-settings",
     label: "Admin-Settings",
     to: "#",
     content: [

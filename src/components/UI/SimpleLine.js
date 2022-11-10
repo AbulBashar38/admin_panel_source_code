@@ -352,6 +352,8 @@ const SimpleLine = () => {
                                     <i className="icon-volume-2"></i> icon-volume-2 </div>
                                 <div className="col-md-3 col-sm-4">
                                     <i className="icon-volume-off"></i> icon-volume-off </div>
+                                <div className="col-md-3 col-sm-4">
+                                    <i className="icon-location-pin"></i> icon-location-pin </div>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ import { styled, Button, Typography, CssBaseline, AppBar, Toolbar, ButtonGroup, 
 import { Menu } from '@mui/icons-material'
 import useStyles from './styles'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { Link } from 'react-router-dom'
 const StyledButton = styled(Button)(({ theme }) => ({
     backgroundColor: "#0F8FA8",
     color: theme.palette.common.white,
@@ -26,7 +27,7 @@ const AddNotification = () => {
     return (
         <>
             <CssBaseline />
-            <AppBar position="static">
+            {/* <AppBar position="static">
                 <Toolbar>
                     <Menu />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -34,20 +35,22 @@ const AddNotification = () => {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
             <main>
                 <div className={classes.container}>
                     <Container maxWidth="md">
                         <Grid container sx={{ display: 'flex', justifyContent: 'space-between', paddingTop: 1, paddingBottom: 2 }} >
                             <Grid sx={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
+                               <Link style={{color:"grey"}} to='/notification'>
                                 <ArrowBackIosIcon />
+                               </Link>
                                 <Typography variant='h5' align='left' color={"grey"}>
                                     Manage Notification
                                 </Typography>
                             </Grid>
 
                             <StyledButton>
-                                + Add New Notification
+                               Send Notification
                             </StyledButton>
 
                         </Grid>

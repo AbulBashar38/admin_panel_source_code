@@ -4,6 +4,7 @@ import { Box, Container } from '@mui/system'
 import { styled, Button, Typography, CssBaseline, AppBar, Toolbar, ButtonGroup, Grid, makeStyles, Card, CardMedia, CardContent, CardActions } from '@mui/material'
 import { Menu } from '@mui/icons-material'
 import useStyles from './styles'
+import { Link } from 'react-router-dom'
 
 const StyledButton = styled(Button)(({ theme }) => ({
     backgroundColor: "#0F8FA8",
@@ -26,7 +27,7 @@ const ManageNotification = () => {
     return (
         <>
             <CssBaseline />
-            <AppBar position="static">
+            {/* <AppBar position="static">
                 <Toolbar>
                     <Menu />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -34,24 +35,27 @@ const ManageNotification = () => {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
             <main>
                 <div className={classes.container}>
-                    <Container>
+                    {/* <Container> */}
                     <Grid container sx={{ display: 'flex', justifyContent: 'space-between', paddingTop:1, paddingBottom:2 }} >
                             <Typography variant='h5' align='left' >
                                 Manage Notification
                             </Typography>
+                            <Link to={'/add-notification'}>
                             <StyledButton>
                                 + Add New Notification
                             </StyledButton>
+                            </Link>
+                            
 
                         </Grid>
 
                         <Grid>
                             <NotificationTable />
                         </Grid>
-                    </Container>
+                    {/* </Container> */}
                 </div>
             </main>
         </>

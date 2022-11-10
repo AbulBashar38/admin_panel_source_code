@@ -291,13 +291,13 @@ const Routes = [
     pageTitle:"Location",
     component: ManageLocation,
   },
-  {
-    path:'/notification',
-    name: "Notification",
-    exact: true, 
-    pageTitle:"Notification",
-    component: ManageNotification,
-  },
+  // {
+  //   path:'/notification',
+  //   name: "Notification",
+  //   exact: true, 
+  //   pageTitle:"Notification",
+  //   component: ManageNotification,
+  // },
   {
     path:'/forum-home',
     name: "Forum",
