@@ -159,13 +159,19 @@ const Dashboard = () => {
 					</Link >
 				</div> */}
 
-				<div className="col-lg-6 col-md-6" >
-					{/* <Circle /> */}
-					{/* <PieChart2 /> */}
-				</div>
+				{/* <div className="col-lg-6 col-md-6" >
+					<Circle />
+					<PieChart2 />
+				</div> */}
 			</div >
-			{/* <ApexChart /> */}
+			{/* <ApexChart />
+			 */}
+
+
+			<div className='row col-lg-6 col-md-6'>
 			<BasicBar />
+			<BasicBar />
+			</div>
 			{/* <Piechart data={getDashbaord} /> */}
 
 

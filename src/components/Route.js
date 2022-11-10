@@ -27,6 +27,16 @@ import ForumList from "./Date Cards/forum";
 import SubscriberList from "./Users/SubscriberList";
 import UnsubscriberList from "./Users/UnsubsriberList";
 
+///Pages updated///
+
+import ManageLocation from './pages/ManageLocation/ManageLocation'
+import AddLocation from './pages/AddLocation/AddLoaction'
+import ForumHome from './pages/Forum/ForumHome'
+import ManageNotification from './pages/ManageNotification/ManageNotification'
+import AddNotification from './pages/AddNotification/AddNotification'
+import UserSuggestedDate from './pages/UserSuggestedDate/UserSuggestedDates'
+
+
 
 const Routes = [
   {
@@ -253,6 +263,42 @@ const Routes = [
     pageTitle: "Dashboard",
     component: Dashboard,
   },
+  {
+    path:'/add-notification',
+    name: "Add notification",
+    exact: true, 
+    pageTitle:"Add Notification",
+    component: AddNotification,
+  },
+  {
+    path:'/notification',
+    name: "Notification",
+    exact: true, 
+    pageTitle:"Notification",
+    component: ManageNotification,
+  },
+  {
+    path:'/add-location',
+    name: "Add Location",
+    exact: true, 
+    pageTitle:"Add Location",
+    component: AddLocation,
+  },
+  {
+    path:'/location',
+    name: "Location",
+    exact: true, 
+    pageTitle:"Location",
+    component: ManageLocation,
+  },
+  {
+    path:'/notification',
+    name: "Notification",
+    exact: true, 
+    pageTitle:"Notification",
+    component: ManageNotification,
+  },
+
 ];
 
 

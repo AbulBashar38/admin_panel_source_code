@@ -136,6 +136,19 @@ const metisMenuCompany = [
     ],
   },
   {
+    id: 8,
+    icon: "icon-home",
+    label: "Booking Locations",
+    to: "#",
+    content: [
+      {
+        id: 9,
+        label: "Manage Locations",
+        to: "/location",
+      },
+    ],
+  },
+  {
     id: 10,
     icon: "icon-home",
     label: "Admin-Settings",

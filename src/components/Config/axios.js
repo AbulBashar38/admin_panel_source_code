@@ -5,7 +5,7 @@ const cookies = new Cookies();
 
 const instance = axios.create({
   // your url
-  baseURL: "https://webservices.mydatejar.com",
+  baseURL: "https://my-date-jar-p2-36562.uk.r.appspot.com",
 });
 
 // Set the AUTH token for any request

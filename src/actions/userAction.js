@@ -46,7 +46,9 @@ import {
 
 // axios.defaults.baseURL = 'http://localhost:4000';
 // axios.defaults.baseURL = "http://server.appsstaging.com:3011";
-axios.defaults.baseURL = "https://webservices.mydatejar.com";
+// axios.defaults.baseURL = "https://webservices.mydatejar.com";
+axios.defaults.baseURL = "https://my-date-jar-p2-36562.uk.r.appspot.com";
+
 
 const cookies = new Cookies();
 
@@ -196,7 +198,7 @@ export const signin = (state) => {
       },
     };
     try {
-      const { data } = await axios.post("https://webservices.mydatejar.com/api/signIn", state, config);
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}signIn`, state, config);
       // localStorage.setItem('myToken', data.token);\
       cookies.set("token", data.token, { path: "/" });
       cookies.set("userData", data.userJson, { path: "/" });
