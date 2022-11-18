@@ -1,16 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import AddButton from '../../Components/AddButton/AddButton'
 import { Box, Container } from '@mui/system'
-import { Button, Typography, CssBaseline, AppBar, Toolbar, ButtonGroup, Grid, makeStyles, Card, CardMedia, CardContent, CardActions } from '@mui/material'
+import { Button, Typography, CssBaseline, AppBar, Toolbar, ButtonGroup, Grid, makeStyles, Card, CardMedia, CardContent, CardActions, Pagination } from '@mui/material'
 import { Menu } from '@mui/icons-material'
 import useStyles from './styles'
 import LocationCard from '../../Components/Locationcard/LocationCard'
 import { Link } from 'react-router-dom'
+// import { getVendorLocation } from '../../../services/services'
+import { fetchAllLocation } from '../../../actions/locationAction'
+import { useDispatch, useSelector } from 'react-redux'
+
 const card = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const ManageLocation = () => {
     const classes = useStyles()
+    // const [loading, setLoading] = useState(false)
+    const [locationData, setlocationData] = useState([])
+    // const [search, setSearch] = useState('')
+    // const [page, setPage] = useState(1)
+    // const [limit, setLimit] = useState(10)
+    const [total, setTotal] = useState(0)
+    const [sort, setSort] = useState('')
+    const dispatch = useDispatch()
+
+    const location = useSelector(state => state.locationReducer)
+    const { data, error, loading, page, limit, search } = location
+
+
+    useEffect(() => {
+        dispatch(fetchAllLocation(search, page, limit))
+        console.log("Manage loaction data", data)
+    }, [search, page, limit])
+
+
     return (
         <>
             <CssBaseline />
@@ -42,12 +65,12 @@ const ManageLocation = () => {
                                 />
                             </Grid>
                             <Grid item xs={3} sm={3} md={3} align="right">
-                               <Link to={'/add-location'}>
-                               <Button variant="contained" className={classes.AddButton}  >
-                                    + Add New Location
-                                </Button>
-                               </Link>
-                                
+                                <Link to={'/add-location'}>
+                                    <Button variant="contained" className={classes.AddButton}  >
+                                        + Add New Location
+                                    </Button>
+                                </Link>
+
                             </Grid>
                         </Grid>
 
@@ -55,36 +78,20 @@ const ManageLocation = () => {
                 </div>
                 <Container className={classes.cardGrid}>
                     <Grid container spacing={20} >
-                        {card.map(item => (
-                            <LocationCard />
+                        {data?.vendors?.length > 0 && data?.vendors?.map(item => (
+                            <LocationCard data={item} />
+
                         ))}
 
                     </Grid>
 
+
+                </Container>
+                <Container className={classes.pagination} >
+                    <Pagination count={data?.totalPages} page={page} onChange={(e, value) => dispatch(fetchAllLocation(search, value, limit))} />
                 </Container>
             </main>
 
-            {/* <Container maxWidth="lg" sx={{ display: "flex" }} >
-                <Box sx={{ flexDirection: "column" }}>
-
-                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px" }}>
-                        <Typography variant="h4" component="div" gutterBottom>
-                            Manage Location
-                        </Typography>
-                    </Box>
-                    <Box sx={{ flex: 1, flexDirection: 'row', display: "inline-flex", justifyContent: "space-between" }}>
-                        <Box sx={{ width: "50%" }}>
-                            <SearchBar
-                                placeholder={"Search..."}
-                            />
-                        </Box>
-                        <Box sx={{ width: "50%", float: "right" }}>
-                            <AddButton />
-                        </Box>
-                    </Box>
-
-                </Box>
-            </Container> */}
         </>
     )
 }

@@ -3,6 +3,7 @@ import settings from './settings';
 import userReducer from './userReducer';
 import productReducer from './productReducer';
 import agencyReducer from './agencyReducer';
+import locationReducer from './locationReducer';
 
 // const initialState = {
 //     userReducer: {
@@ -12,7 +13,8 @@ import agencyReducer from './agencyReducer';
 
 export default combineReducers({
     settings,
-    userReducer,        
+    userReducer,
     productReducer,
-    agencyReducer,    
+    agencyReducer,
+    locationReducer
 });

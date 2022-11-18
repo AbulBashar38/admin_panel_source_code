@@ -20,6 +20,15 @@ const useStyles = makeStyles((theme) => ({
         padding: '100px 0px',
 
     },
+    pagination: {
+        flexDirection: "row",
+        padding: '50px 0px',
+        justifyContent: 'center',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+
+
+    },
     AddButton: {
         backgroundColor: '#0F8FA8 !important',
         padding: '10px 30px !important',

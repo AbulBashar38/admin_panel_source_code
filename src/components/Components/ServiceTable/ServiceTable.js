@@ -12,6 +12,7 @@ const TableCellx = withStyles({
     }
 })(TableCell);
 const ServiceTable = ({ data, headless }) => {
+    console.log("data service", data)
     return (
         <>
             {/* table with 2 columns by using material ui */}
@@ -26,21 +27,12 @@ const ServiceTable = ({ data, headless }) => {
                     </TableHead>}
 
                     <TableBody>
-                        <TableRow >
-                            <TableCellx align="left">Service 1</TableCellx>
-                            <TableCellx></TableCellx>
-                            <TableCellx align="right">$50</TableCellx>
-                        </TableRow>
-                        <TableRow>
-                            <TableCellx align="left">Service 2</TableCellx>
-                            <TableCellx></TableCellx>
-                            <TableCellx align="right">$80</TableCellx>
-                        </TableRow>
-                        <TableRow>
-                            <TableCellx align="left">Service 3</TableCellx>
-                            <TableCellx></TableCellx>
-                            <TableCellx align="right">$90</TableCellx>
-                        </TableRow>
+                        {data?.length > 0 && data?.map((row) => (
+                            <TableRow >
+                                <TableCellx align="left">{row.title}</TableCellx>
+                                <TableCellx></TableCellx>
+                                <TableCellx align="right">${row.price}</TableCellx>
+                            </TableRow>))}
                     </TableBody>
                 </Table>
             </TableContainer>
