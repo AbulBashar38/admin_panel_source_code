@@ -66,7 +66,9 @@ const rows = [
     { sl: 5, name: 'Gingerbread', calories: 356, fat: 16.0, carbs: 49, protein: 3.9,image:"https://source.unsplash.com/random" },
 ];
 
-export default function ForumTable() {
+export default function ForumTable(data) {
+    const tabledata=data.data.data
+    console.log("data from forum table",tabledata)
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -77,28 +79,28 @@ export default function ForumTable() {
                         <StyledTableCell align="left">Date card Name</StyledTableCell>
                         <StyledTableCell align="left">Experiance Description</StyledTableCell>
                         <StyledTableCell align="left">Likes</StyledTableCell>
-                        <StyledTableCell align="left">Comments</StyledTableCell>
+                        {/* <StyledTableCell align="left">Comments</StyledTableCell> */}
                         <StyledTableCell align="right">Operation</StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {tabledata.map((row) => (
                         <StyledTableRow key={row.sl}>
                             <StyledTableCell align="left">
                             <Grid sx={{ display: 'flex', justifyContent: "flex-start", alignItems: "center" }}>
-                            <img src={row.image} style={{borderRadius:"50%",height:"40px",width:"40px", marginRight:"30px"}} />
-
+                            <img src={row?.user_id?.user_image} style={{borderRadius:"50%",height:"40px",width:"40px", marginRight:"30px"}} />
+                            
                                 <Typography variant='h7' align='left' fontWeight={"bold"} color={"grey"}>
-                                {row.name}
+                                {row?.user_id?.user_name}
                                 </Typography>
                             </Grid>
                                 
                             </StyledTableCell>
-                            <StyledTableCell align="left">{row.calories}</StyledTableCell>
-                            <StyledTableCell align="left">{row.name}</StyledTableCell>
-                            <StyledTableCell align="left">{row.name}</StyledTableCell>
-                            <StyledTableCell align="left">{row.fat}</StyledTableCell>
-                            <StyledTableCell align="left">{row.carbs}</StyledTableCell>
+                            <StyledTableCell align="left">{row.dateCard_id?.dateCard_number}</StyledTableCell>
+                            <StyledTableCell align="left">{row?.dateCard_id?.dateCard_name}</StyledTableCell>
+                            <StyledTableCell align="left">{row?.experience_description}</StyledTableCell>
+                            <StyledTableCell align="left">{row?.likes}</StyledTableCell>
+                            {/* <StyledTableCell align="left">{row.carbs}</StyledTableCell> */}
 
                             <StyledTableCell align="right">
                                 <Grid container sx={{ display: 'flex', justifyContent: 'flex-end' }} spacing={2}>

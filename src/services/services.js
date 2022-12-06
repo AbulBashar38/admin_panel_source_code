@@ -26,8 +26,8 @@ export default {
 
 
 
-export const getForum = (search, page, limit, likes, experience_description) => {
-    return axios.get(`${baseURL}date-card/Forumlist?q=${search}&page=${page}&limit=${limit}&sort=${likes}&fields=${experience_description}`)
+export const getForum = (search, page, limit, sort, fields) => {
+    return axios.get(`${baseURL}date-card/Forumlist?q=${search}&page=${page}&limit=${limit}&sort=${sort}&fields=${fields}`)
 }
 
 export const getVendorLocation = (search, page, limit) => {
