@@ -6,6 +6,7 @@ import { Menu } from '@mui/icons-material'
 import useStyles from './styles'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from 'react-router-dom'
+import { Formik,Form } from 'formik'
 const StyledButton = styled(Button)(({ theme }) => ({
     backgroundColor: "#0F8FA8",
     color: theme.palette.common.white,
@@ -39,6 +40,22 @@ const AddNotification = () => {
             <main>
                 <div className={classes.container}>
                     <Container maxWidth="md">
+                        <Formik 
+                        initialValues={{title:"My Date Jar",body:""}}
+                        onSubmit={(values)=>{
+                            console.log(values)
+                        }}
+                        >
+                           {({
+                            values,
+                            errors,
+                            touched,
+                            handleChange,
+                            handleBlur,
+                            handleSubmit,
+                            isSubmitting,
+                            /* and other goodies */
+                        }) => ( <Form>
                         <Grid container sx={{ display: 'flex', justifyContent: 'space-between', paddingTop: 1, paddingBottom: 2 }} >
                             <Grid sx={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
                                <Link style={{color:"grey"}} to='/notification'>
@@ -49,7 +66,7 @@ const AddNotification = () => {
                                 </Typography>
                             </Grid>
 
-                            <StyledButton>
+                            <StyledButton onSubmit={handleSubmit}>
                                Send Notification
                             </StyledButton>
 
@@ -75,8 +92,10 @@ const AddNotification = () => {
                                         // id="outlined-multiline-flexible"
                                         minRows={4}
                                         multiline
-                                        name="description"
-                                        // value={"text"}
+                                        name="body"
+                                        value={values.body}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
                                         placeholder="Text here"
                                         fullWidth
                                         variant="outlined"
@@ -86,6 +105,8 @@ const AddNotification = () => {
                             </Grid>
 
                         </Grid>
+                        </Form> )}
+                        </Formik>
                     </Container>
                 </div>
             </main>

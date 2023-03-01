@@ -10,6 +10,8 @@ import { AiFillCheckCircle, BiMessageRounded, BiMessageSquare, BsListCheck, MdCa
 import PieChart2 from '../../myComponents/PieChart2';
 import BasicBar from '../../myComponents/BasicBar';
 import Circle from '../../myComponents/Circle';
+// import DoghnutChart from '../Components/DoghnutChart/DoghnutChart';
+import BarCharts  from '../Components/BarChart/BarChart'
 // import {} from ""
 const Dashboard = () => {
 
@@ -31,6 +33,7 @@ const Dashboard = () => {
 					</div>
 				</div>
 			</div>
+			<BarCharts/>
 			<div className="row clearfix">
 				<div className="col-lg-3 col-md-6">
 					<Link to="/user-list" className="card">
@@ -159,19 +162,27 @@ const Dashboard = () => {
 					</Link >
 				</div> */}
 
-				{/* <div className="col-lg-6 col-md-6" >
-					<Circle />
-					<PieChart2 />
-				</div> */}
+				{/* <div className="col-lg-4 col-md-4" > */}
+					<Circle name={"Registration"} />
+					<Circle  name={"Platform"}/>
+					{/* <PieChart2 /> */}
+				{/* </div> */}
+			
+			<div className='col-lg-6 col-md-6' >
+			
+			<BasicBar />
+			</div>
+			<div className='col-lg-6 col-md-6' >
+
+			<BasicBar />
+			</div>
+
 			</div >
 			{/* <ApexChart />
 			 */}
 
-
-			<div className='row col-lg-6 col-md-6'>
-			<BasicBar />
-			<BasicBar />
-			</div>
+			
+			{/* <DoghnutChart/> */}
 			{/* <Piechart data={getDashbaord} /> */}
 
 

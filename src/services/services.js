@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = process.env.REACT_APP_API_URL
+const baseURL = process.env.REACT_APP_API_URL_LOCAL
 
 const service = axios.create({ withCredentials: true, baseURL });
 const header =
@@ -37,4 +37,8 @@ export const getVendorLocation = (search, page, limit) => {
 
 export const addVendorLocation = (values) => {
     return axios.post(`${baseURL}vendor`, values)
+}
+
+export const sendNotification = (values)=>{
+    return axios.post(`${baseURL}notification/`,values)
 }

@@ -261,7 +261,7 @@ const AddLoaction = () => {
                                         </FormControl>
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={12} >
-                                        <Button variant="contained" color="primary" type="submit">Submit</Button>
+                                        <Button variant="contained" color="primary" type="submit" onSubmit={handleSubmit}>Submit</Button>
                                     </Grid>
                                 </Grid>
                             </Form>)}

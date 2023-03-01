@@ -28,7 +28,7 @@ const BasicBar = () => {
                     show: false,
                 },
             },
-            colors: ['#D55187'],
+            colors: ['#0F8FA8'],
             grid: {
                 yaxis: {
                     lines: {
@@ -45,22 +45,32 @@ const BasicBar = () => {
             plotOptions: {
                 bar: {
                     horizontal: true,
+                    dataLabels: {
+                        position: 'top',
+                      },
                 }
             },
+           
+
             dataLabels: {
-                enabled: false
-            },
+                enabled: true,
+                offsetX: -6,
+                style: {
+                  fontSize: '12px',
+                  colors: ['#fff']
+                }
+              },
             xaxis: {
                 categories: ['No Of Users', 'Android Users', 'IOS Users', 'Subscribed Users', 'Unsubscribed Users'],
             }
         },
         series: [{
-            data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+            data: [ 580, 690, 1100, 1200, 1380]
         }],
     })
     return (
-        <>
-            <div>BasicBar</div>
+        <div style={{backgroundColor:"white",padding:30,margin:30,borderRadius:10}}>
+            <div style={{fontSize:20,fontWeight:"bold"}}>BasicBar</div>
 
             <Chart
                 options={state.options}
@@ -69,7 +79,7 @@ const BasicBar = () => {
                 height="350px"
             />
 
-        </>
+        </div>
     )
 }
 

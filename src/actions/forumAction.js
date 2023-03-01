@@ -8,7 +8,7 @@ function fetchForumList(search, page, limit, sort, fields) {
 
         try {
             const { data } = await getForum(search, page, limit, sort, fields);
-            console.log("action data", data[0])
+            console.log("action data", data)
             return dispatch({
                 type: FETCH_FORUM_DATA_SUCCESS,
                 payload: data[0]
